@@ -1,12 +1,47 @@
-<doctype html>
-<html>
-    <head>
-        <title>Welcome!</title>
-        <link rel="stylesheet"src="Style.css">
-    </head>
-    <body>
-        <div >
-            <h1 class="head">hi</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Base">
+        <center>
+            <h1 id="basetext">Welcome!</h1>
+        </center>
+    </div>
+
+    <section class="Navbar">
+        <div class="Navbar-Div">
+            <button id="A" class="Navbar-Items active" href="#"> Home </button>
+            <button id="B" class="Navbar-Items" href="#"> Tools </button>
+            <button id="C" class="Navbar-Items" href="#"> Help </button>
+            <button id="D" class="Navbar-Items" href="#"> About </button>
         </div>
-    </body>
+
+        <section id="Content">
+            <div id="Home" class="content">
+                <p class="Home-Content">Welcome! This website is all about facts about the solar system and our universe. You can discover different things here. try them out :D</p>
+                <button class="Home-Content">Earsdad</button>
+            </div>
+            <div id="Tools" class="content">
+                <p>Tools section content goes here.</p>
+            </div>
+            <div id="Help" class="content">
+                <p>Help section content goes here.</p>
+            </div>
+            <div id="About" class="content">
+                <p>About section content goes here.</p>
+            </div>
+        </section>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
 </html>
