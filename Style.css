@@ -1,7 +1,164 @@
-div{
-background-color:linear-gradient(to bottom, #33ccff , #ff99cc );
-color:green;
+/*Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2', sans-serif;
 }
-head{
-    color:#33ccff
+
+.Base {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#basetext {
+    color: white;
+    position: relative;
+    display: flex;
+    height: max-content;
+    width: max-content;
+    animation: Zoom 1s linear infinite;
+}
+
+#basetext::after {
+    content: "";
+    background: linear-gradient(to left, #061452 40%, #1a66bd 60%);
+    height: 4px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+@keyframes Zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.Navbar {
+    border-radius: 10px;
+    height: auto; /* or specify a fixed height, e.g., height: 80vh; */
+    width: 80%;
+    position: relative;
+    z-index: 999;
+    border: 2px solid white;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Navbar-Div {
+    background: linear-gradient(to right, #230258 40%, #070579 60%);
+    height: 7%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.Navbar-Items {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    border: 1px solid transparent; /* Border to make them look like buttons */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0 10px; /* Adjust spacing between items */
+    display: inline-block; /* Ensure they behave like inline elements */
+    background: none;
+}
+
+.Navbar-Items:hover {
+    color: rgb(0, 255, 200);
+}
+
+.Navbar-Items.active {
+    color: rgb(3, 77, 161);
+}
+
+#Content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.content {
+    display: none;
+    width: 100%;
+    height: 100%; /* or specify a fixed height, e.g., height: 60vh; */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    overflow-y: auto; /* Add scrollbars if content exceeds height */
+}
+
+.content:first-child {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("Background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+:hoverh2 {
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+}
+.Home-Content > p{
+    font-size: 20pt;
+}
+.Home-Content  button {
+    background: linear-gradient(to right, #FFD700, #FFA500);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.Home-Content  button:hover {
+    background: linear-gradient(to right, #FFA500, #FFD700);
+}
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover {
+    cursor : default;
 }
