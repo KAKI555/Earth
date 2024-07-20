@@ -32,34 +32,33 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Add event listener for input changes in the search input field
+    const searchInput = document.getElementById('Search-Input');
+    searchInput.addEventListener('input', function() {
+        performSearch();
+    });
 });
+
 function performSearch() {
     const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
-    console.log('Button pressed');
+    console.log('Search term:', searchTerm);
 
-    // Check if search term is empty
-    if (searchTerm === '') {
-        console.log('Please enter a search term.');
-        return; // Exit function early if no search term
+    
     }
 
-    // Select all elements with class .Search-able within #Tool-Content
     const toolContent = document.querySelectorAll('#Tool-Content .Search-able');
-
-    // Loop through each .Search-able element
     toolContent.forEach(item => {
         const content = item.textContent.toLowerCase();
-
-        if (content.includes(searchTerm)) {
-            item.closest('#Tool-Content').style.display = 'block'; // Display the parent content section
+     
+        if (searchTerm === '' || content.includes(searchTerm))  {
+            item.closest('#Tool-Content').style.display = 'block';
             console.log('Found:', searchTerm);
-            document.getElementById("not-found").style.display ="none"
+            document.getElementById('not-found').style.display = 'none';
         } else {
-            item.closest('#Tool-Content').style.display = 'none'; // Hide the parent content section
-            document.getElementById("not-found").style.display ="Block"
+            item.closest('#Tool-Content').style.display = 'none';
+            document.getElementById('not-found').style.display = 'block';
         }
     });
 }
-
-
 
