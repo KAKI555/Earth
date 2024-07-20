@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" href="pexels-pixabay-87651.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -18,25 +19,39 @@
 
     <section class="Navbar">
         <div class="Navbar-Div">
-            <button id="A" class="Navbar-Items active" href="#"> Home </button>
-            <button id="B" class="Navbar-Items" href="#"> Tools </button>
-            <button id="C" class="Navbar-Items" href="#"> Help </button>
-            <button id="D" class="Navbar-Items" href="#"> About </button>
+            <button id="A" class="Navbar-Items active"> Home </button>
+            <button id="B" class="Navbar-Items"> Facts </button>
+            <button id="C" class="Navbar-Items"> Help </button>
+            <button id="D" class="Navbar-Items"> About </button>
         </div>
 
         <section id="Content">
-            <div id="Home" class="content">
+            <section id="Home" class="content">
                 <p class="Home-Content">Welcome! This website is all about facts about the solar system and our universe. You can discover different things here. try them out :D</p>
-            </div>
-            <div id="Tools" class="content">
-                <p>Tools section content goes here.</p>
-            </div>
-            <div id="Help" class="content">
+                <button class="Home-Content">Easdd</button>
+            </section>
+
+            <section id="Facts" class="content">
+                <div class="Search">
+                    <input id="Search-Input" placeholder="Search...">
+                    <button class="Search-Button"onclick="performSearch()"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#2854C5"><path d="M791.68-113.17 530.83-373.86q-29.76 24.52-69.28 38.46-39.52 13.94-84.48 13.94-110.27 0-186.74-76.52-76.47-76.52-76.47-185.35 0-108.84 76.52-185.36 76.53-76.52 185.69-76.52 109.17 0 185.36 76.52 76.19 76.52 76.19 185.46 0 43.71-13.61 83.02-13.6 39.3-39.47 72.32l261.6 260.34-54.46 54.38ZM376.46-397.21q77.44 0 131.42-54.44 53.98-54.44 53.98-131.68 0-77.25-54-131.69-54.01-54.44-131.4-54.44-77.94 0-132.39 54.44-54.45 54.44-54.45 131.69 0 77.24 54.42 131.68 54.43 54.44 132.42 54.44Z"/></svg></button>
+                </div>
+                <!--No Content displayed-->
+                <h3 id="not-found">Not found</h3>
+                <div id="Tool-Content">
+                    <div id="Speed Calculator">
+                       <h1 class="Search-able">Hi</h1>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Help" class="content">
                 <p>Help section content goes here.</p>
-            </div>
-            <div id="About" class="content">
+            </section>
+
+            <section id="About" class="content">
                 <p>About section content goes here.</p>
-            </div>
+            </section>
         </section>
     </section>
 
