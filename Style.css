@@ -1,4 +1,3 @@
-/*Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap');
 
 * {
@@ -130,10 +129,10 @@ body {
     background-size: cover;
     background-position: center;
     color: white;
-    user-select: none; 
-    -webkit-user-select: none; 
-    -moz-user-select: none;
-    -ms-user-select: none;
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Chrome, Safari, Opera */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
 :hoverh2 {
@@ -162,3 +161,87 @@ p {
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover {
     cursor : default;
 }
+.Search {
+    position: relative;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Optional: Adjust margin as needed */
+}
+
+.Search Input:hover::placeholder {
+    color: #000000;
+    
+}
+.Search input::placeholder{
+    color:#0a19ee;
+}
+.Search input {
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 1000px; /* Rounded border */
+    border: none;
+    font-size: 16px;
+}
+.Search {
+    position: relative;
+    display: inline-block; /* Ensure inline-block to contain input and button */
+}
+
+.Search input {
+    padding: 10px 40px 10px 20px; /* Adjust padding to make space for button */
+    top: 50%;
+    border-radius: 1000px; /* Rounded border */
+    border: none;
+    font-size: 16px;
+    width: 400px; /* Adjust width as needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    height: 45px;
+}
+.Search input:focus{
+    outline: none; 
+    border-radius: 1000px;
+}
+
+.Search button {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%); /* Center vertically */
+    background: linear-gradient(to right bottom, #230258 40%, #070579 60%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 999;
+    border-radius: 1000px;
+    height: 46px;
+    width: 46px;
+}
+
+.Search button:hover {
+    animation-name: Search-Hover  ;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    scale:1.25;
+    top: 60%;
+}
+@keyframes Search-Hover {
+    0% {
+        background: linear-gradient(to right bottom, #230258 40%, #070579 60%);
+    }
+    100% {
+        background: linear-gradient(to left top, #230258 40%, #070579 60%);
+    }
+}
+.search-button:active svg {
+    transform: scale(1.2); /* Increase the scale factor as desired */
+}
+#not-found{
+    display: none
+}
+
+
+
