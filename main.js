@@ -38,27 +38,23 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', function() {
         performSearch();
     });
-});
 
-function performSearch() {
-    const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
-    console.log('Search term:', searchTerm);
+    function performSearch() {
+        const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
+        console.log('Search term:', searchTerm);
 
-    
+        const toolContent = document.querySelectorAll('#Tool-Content .Search-able');
+        toolContent.forEach(item => {
+            const content = item.textContent.toLowerCase();
+         
+            if (searchTerm === '' || content.includes(searchTerm))  {
+                item.closest('#Tool-Content').style.display = 'block';
+                console.log('Found:', searchTerm);
+                document.getElementById('not-found').style.display = 'none';
+            } else {
+                item.closest('#Tool-Content').style.display = 'none';
+                document.getElementById('not-found').style.display = 'block';
+            }
+        });
     }
-
-    const toolContent = document.querySelectorAll('#Tool-Content .Search-able');
-    toolContent.forEach(item => {
-        const content = item.textContent.toLowerCase();
-     
-        if (searchTerm === '' || content.includes(searchTerm))  {
-            item.closest('#Tool-Content').style.display = 'block';
-            console.log('Found:', searchTerm);
-            document.getElementById('not-found').style.display = 'none';
-        } else {
-            item.closest('#Tool-Content').style.display = 'none';
-            document.getElementById('not-found').style.display = 'block';
-        }
-    });
-}
-
+});
