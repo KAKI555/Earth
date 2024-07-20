@@ -3,8 +3,8 @@
 * New search bar
 * Search bar style improvment
 * New Java script function
- -> you can use any button to search
- -> Different sections t search (coming soon)
+  * you can use any button to search
+  * Different sections search (coming soon)
 * Removed annoying animations and replaced with new one
 * New Css pesudo
 
