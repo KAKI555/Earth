@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
         console.log('Search term:', searchTerm);
 
-        const toolContent = document.querySelectorAll('#Tool-Content .Search-able');
+        const toolContent = document.querySelectorAll('#Fact-Content .Search-able');
         toolContent.forEach(item => {
             const content = item.textContent.toLowerCase();
          
