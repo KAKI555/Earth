@@ -232,3 +232,13 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover {
 #not-found{
     display: none
 }
+.About-Buttons{
+    background: none;
+    border-radius: 1000px;
+    border: none;
+}
+.About-Buttons:hover{
+   transform: scale(1.2);
+}
+
+
