@@ -8,7 +8,7 @@
 * Removed annoying animations and replaced with new one
 * New Css pesudo
 
-# Please star this so more people can use yhis template
+# Please star this so more people can use this template
 
 This is free to use and thank you for reading :D
 Made by Kaki555
