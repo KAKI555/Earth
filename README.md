@@ -1,4 +1,4 @@
-# This is templete for websites with css and basic javaScript. V-3
+# This is templete for websites with css and basic javaScript.
 # Version - 4 Improvments
 * About section
 * New Java script function
