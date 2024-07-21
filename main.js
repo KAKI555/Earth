@@ -70,8 +70,4 @@ if (height >  812 ){
 const searchInput = document.getElementById('Search-Input');
 searchInput.addEventListener('input', performSearch);
 }
-if (height <  812 ){
-const searchButton = document.getElementByclass('Search-Button');
-searchButton.style.display = "none";
-}
 
