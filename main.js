@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = item.textContent.toLowerCase();
          
             if (searchTerm === '' || content.includes(searchTerm))  {
-                item.closest('#Tool-Content').style.display = 'block';
+                item.closest('#Fact-Content').style.display = 'block';
                 console.log('Found:', searchTerm);
                 document.getElementById('not-found').style.display = 'none';
             } else {
-                item.closest('#Tool-Content').style.display = 'none';
+                item.closest('#Fact-Content').style.display = 'none';
                 document.getElementById('not-found').style.display = 'block';
             }
         });
