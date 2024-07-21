@@ -1,8 +1,14 @@
-var height = screen.height
-var width = screen.width
-
 document.addEventListener('DOMContentLoaded', function() {
     const navbarItems = document.querySelectorAll('.Navbar-Items');
+    const searchButton = document.querySelector('.Search-Button');
+    const searchInput = document.getElementById('Search-Input');
+
+    const height = window.innerHeight;
+    if (height <= 812) {
+        searchButton.style.display = 'none';
+    }
+
+    searchInput.addEventListener('input', performSearch);
 
     navbarItems.forEach(item => {
         item.addEventListener('click', function(event) {
@@ -48,26 +54,21 @@ function performSearch() {
             if (words.some(word => word.includes(searchWord))) {
                 found = true;
             }
-            else {
-                found = false;
-            }
         });
 
         if (found || searchTerm === '') {
-            item.parentElement.style.display = 'block';
+            item.closest('#Facts-Content').style.display = 'block';
             document.getElementById('not-found').style.display = 'none';
         } else {
-            item.parentElement.style.display = 'none';
+            item.closest('#Facts-Content').style.display = 'none';
             document.getElementById('not-found').style.display = 'block';
         }
     });
 }
 
+
 const searchInput = document.getElementById('Search-Input');
 searchInput.addEventListener('input', performSearch);
 
-if (height >  812 ){
-const searchInput = document.getElementById('Search-Input');
-searchInput.addEventListener('input', performSearch);
-}
+
 
