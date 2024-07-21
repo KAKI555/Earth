@@ -1,3 +1,6 @@
+var height = screen.height
+var width = screen.width
+
 document.addEventListener('DOMContentLoaded', function() {
     const navbarItems = document.querySelectorAll('.Navbar-Items');
 
@@ -5,12 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Remove 'active' class from all navigation items
             navbarItems.forEach(link => {
                 link.classList.remove('active');
             });
 
-            // Add 'active' class to the clicked navigation item
             this.classList.add('active');
 
             var clickedId = this.id;
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             contentSections.forEach(section => {
                 section.style.display = 'none';
             });
-
             if (clickedId === 'A') {
                 document.getElementById('Home').style.display = 'block';
             } else if (clickedId === 'B') {
@@ -32,29 +32,46 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
 
-    // Add event listener for input changes in the search input field
-    const searchInput = document.getElementById('Search-Input');
-    searchInput.addEventListener('input', function() {
-        performSearch();
-    });
+function performSearch() {
+    const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
+    const facts = document.querySelectorAll('#Facts-Content .Search-able');
 
-    function performSearch() {
-        const searchTerm = document.getElementById('Search-Input').value.trim().toLowerCase();
-        console.log('Search term:', searchTerm);
+    facts.forEach(item => {
+        const content = item.textContent.toLowerCase();
+        const words = content.split(/\s+/);
+        const searchWords = searchTerm.split(/\s+/);
 
-        const toolContent = document.querySelectorAll('#Fact-Content .Search-able');
-        toolContent.forEach(item => {
-            const content = item.textContent.toLowerCase();
-         
-            if (searchTerm === '' || content.includes(searchTerm))  {
-                item.closest('#Fact-Content').style.display = 'block';
-                console.log('Found:', searchTerm);
-                document.getElementById('not-found').style.display = 'none';
-            } else {
-                item.closest('#Fact-Content').style.display = 'none';
-                document.getElementById('not-found').style.display = 'block';
+        let found = false;
+        searchWords.forEach(searchWord => {
+            if (words.some(word => word.includes(searchWord))) {
+                found = true;
+            }
+            else {
+                found = false;
             }
         });
-    }
-});
+
+        if (found || searchTerm === '') {
+            item.parentElement.style.display = 'block';
+            document.getElementById('not-found').style.display = 'none';
+        } else {
+            item.parentElement.style.display = 'none';
+            document.getElementById('not-found').style.display = 'block';
+        }
+    });
+}
+
+const searchInput = document.getElementById('Search-Input');
+searchInput.addEventListener('input', performSearch);
+
+if (height >  812 ){
+const searchInput = document.getElementById('Search-Input');
+searchInput.addEventListener('input', performSearch);
+}
+if (height <  812 ){
+const searchButton = document.getElementByclass('Search-Button');
+searchButton.style.display = "none";
+}
+
