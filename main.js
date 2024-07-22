@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchButton.style.display = 'none';
         searchInput.addEventListener('input', performSearch);
     }
-    else if (height <= 812){
+    else if (height <=812){
         searchButton.style.display = 'absolute';
         searchInput.removeEventListener('input', performSearch);
     }
