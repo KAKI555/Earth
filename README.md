@@ -4,7 +4,7 @@
 * New Java script function
   * Different sections search
   * Word by word search
-  * Responsve search
+  * Responsive search
 * About section css
 
 # Please star this so more people can use this template
