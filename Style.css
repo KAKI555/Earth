@@ -238,7 +238,23 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover {
     border: none;
 }
 .About-Buttons:hover{
-   transform: scale(1.2);
+    border-radius: 1000px;
+    transition: 1s linear;
+    border: #000000;
+    border-width: 50px;
 }
-
-
+.Facts{
+    background: #e7e7e793;
+    border-radius: 1000px;
+    height:100px;
+    width:200px;
+}
+.Facts:hover {
+    transition: 0.1s linear;
+    background: #e7e7e7e0;
+    transform: scale(1.1);
+}
+#Facts-Content{
+    padding: 10px 10px;
+    align-items: normal;
+}
