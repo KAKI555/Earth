@@ -3,9 +3,9 @@
 * New Java script function
   * Responsive search button
 * New css
-   *New hover
-   *Transition
-   *Other developement
+  *New hover
+  *Transition
+  *Other developement
 # Please star this so more people can use this template
 
 This is free to use and thank you for reading :D
