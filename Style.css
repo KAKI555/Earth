@@ -234,7 +234,7 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover {
 }
 .About-Buttons{
     background: none;
-    border-radius: 1000px;
+    border-radius: 50px;
     border: none;
 }
 .About-Buttons:hover{
