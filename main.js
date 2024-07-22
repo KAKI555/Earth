@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbarItems = document.querySelectorAll('.Navbar-Items');
-    const searchButton = document.querySelector('.Search-Button');
+    const searchButton = document.getElementById('Search-button');
     const searchInput = document.getElementById('Search-Input');
 
     const height = window.innerHeight;
-    if (height <= 812) {
+    if (height >= 812) {
         searchButton.style.display = 'none';
+        searchInput.addEventListener('input', performSearch);
     }
-
-    searchInput.addEventListener('input', performSearch);
-
+    else if (height <= 812){
+        searchButton.style.display = 'absolute';
+        searchInput.removeEventListener('input', performSearch);
+    }
     navbarItems.forEach(item => {
         item.addEventListener('click', function(event) {
             event.preventDefault();
@@ -17,15 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navbarItems.forEach(link => {
                 link.classList.remove('active');
             });
-
             this.classList.add('active');
-
             var clickedId = this.id;
-            console.log('Clicked ID:', clickedId);
-            
             const contentSections = document.querySelectorAll('.content');
             contentSections.forEach(section => {
-                section.style.display = 'none';
+            section.style.display = 'none';
             });
             if (clickedId === 'A') {
                 document.getElementById('Home').style.display = 'block';
@@ -65,10 +63,3 @@ function performSearch() {
         }
     });
 }
-
-
-const searchInput = document.getElementById('Search-Input');
-searchInput.addEventListener('input', performSearch);
-
-
-
